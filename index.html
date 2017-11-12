@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Car Rental</title>
+</head>
+<body>
+    <h1>Business Name</h1>
+    <p id="name"></p>
+
+    <h2>Economy cars available</h2>
+    <p id="econ"></p>
+    
+    <h2>Midsize cars abailable</h2>
+    <p id="mid"></p>
+
+<button onClick="getCars()">Update availability</button> 
+
+<button onClick="rentEcon()">Rent out 1 Economy car</button> 
+
+<button onClick="rentMid()">Rent out 1 Midsize car</button>
+<!--  -->
+    <script>
+        var car = {
+            bizName: 'Enterprise Car Rental',
+            economy: 90,
+            midsize: 180,
+        }
+        function getCars() {
+            document.getElementById("name").innerHTML = car.bizName;
+            document.getElementById("econ").innerHTML = car.economy;
+            document.getElementById("mid").innerHTML = car.midsize;
+            };
+        function rentEcon () {
+            document.getElementById("econ").innerHTML = car.economy--;
+            return car.economy;
+         };
+        function rentMid () {
+            document.getElementById("mid").innerHTML = car.midsize--;
+            return car.midsize;
+         };
+    </script>
+    
+</body>
+</html>
